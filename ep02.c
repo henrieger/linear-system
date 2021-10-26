@@ -19,21 +19,29 @@ int main() {
     scanf("%d %d", &n, &k);
 
     /* Declara e lê vetor de funções */
-    void **f = (void **)malloc(k * sizeof(void *));
-    for (int i = 0; i < k; i++) {
-        scanf("%s", funcao);
-        f[i] = evaluator_create(funcao);
-    }
+    void **f = leFuncoes(funcao, k);
 
     /* Lê epsilon e número máximo de iterações */
     scanf("%lf %d", &epsilon, &maxIt);
 
-    /* Criar matriz */
+    /* Vetor de termos independentes */
+    double * termos = calloc(n, sizeof(double));
+
+    /* Matriz que funciona como vetor de diagonais. Cada linha é uma diagonal. */
+    double * sl = calloc(k * n, sizeof(double));
+
+    /* Calculando elementos do vetor de diagonais e do vetor dos termos independentes */
+    preencheDiagonais(sl, f, n, k);
+    preencheTermos(termos, f, n, k);
+
+    /*Imprime diagonais e termos independentes */
+    imprimeDiagonais(sl, n, k);
+    imprimeTermos(termos, n);
 
     /* Resolver por Gauss-Seidel */
 
     /* Imprime tempo de execução */
-    printf("%lf\n", timestamp());
+    printf("\nTempo:\n%lf\n", timestamp());
 
     return 0;
 }
