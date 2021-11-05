@@ -1,4 +1,8 @@
 /*Henrique e Leon */
+
+#ifndef __FUNCOES__
+#define __FUNCOES__
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -18,3 +22,5 @@ void imprimeDiagonais(double * sl, int n, int k);
 
 /* Imprime vetor dos termos independentes. */
 void imprimeTermos(double * termos, int n);
+
+#endif
