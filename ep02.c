@@ -14,6 +14,7 @@ int main() {
     int n, k, maxIt;
     double epsilon;
     char funcao[MAX];
+    double tempoInicio;
 
     /* Lê dimensão da matriz e diagonais */
     scanf("%d %d", &n, &k);
@@ -39,9 +40,10 @@ int main() {
     imprimeTermos(termos, n);
 
     /* Resolver por Gauss-Seidel */
+    tempoInicio = timestamp();
 
     /* Imprime tempo de execução */
-    printf("\nTempo:\n%lf\n", timestamp());
+    printf("\nTempo:\n%lf\n", timestamp() - tempoInicio);
 
     return 0;
 }
