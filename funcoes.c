@@ -16,7 +16,7 @@ void ** leFuncoes(char * funcao, int k) {
 }
 
 void preencheDiagonais(double * sl, void ** f, int n, int k) {
-    int meio = (k-1)/2;
+    int meio = k >> 1;
     for (int j = 0; j < k; j++) {
         for (int i = 0; i < n - abs(meio - j); i++) {
             sl[(j*n) + i] = evaluator_evaluate_x(f[j], (double)i);
@@ -31,7 +31,7 @@ void preencheTermos(double * termos, void ** f, int n, int k) {
 }
 
 void imprimeDiagonais(double * sl, int n, int k) {
-    int meio = (k-1)/2;
+    int meio = k >> 1;
     printf("Diagonais: \n");
     for (int j = 0; j < k; j++) {
         for (int i = 0; i < n - abs(meio - j); i++) {
