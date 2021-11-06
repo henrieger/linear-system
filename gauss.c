@@ -61,5 +61,4 @@ void gaussSeidel(double * sl, double * termos, double * res, int n, int k, doubl
         iter++;
     } while (iter < maxIt && maiorAbs(res, tempRes, n) > epsilon);
 
-    free(tempRes);
 }
