@@ -23,4 +23,7 @@ void imprimeDiagonais(double * sl, int n, int k);
 /* Imprime vetor dos termos independentes. */
 void imprimeTermos(double * termos, int n);
 
+/* Imprime vetor das variáveus. */
+void imprimeVariaveis(double * res, int n);
+
 #endif

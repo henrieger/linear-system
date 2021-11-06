@@ -49,3 +49,11 @@ void imprimeTermos(double * termos, int n) {
     }
     printf("\n");
 }
+
+void imprimeVariaveis(double * res, int n) {
+    printf("Solução:\n");
+    for (int i=0; i < n; i++) {
+        printf("%lf ", res[i]);
+    }
+    printf("\n");
+}

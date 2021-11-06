@@ -1,5 +1,6 @@
 /*Henrique e Leon */
 #include "funcoes.h"
+#include "gauss.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,6 +29,9 @@ int main() {
     /* Vetor de termos independentes */
     double * termos = calloc(n, sizeof(double));
 
+    /* Vetor de variáveis */
+    double * res = calloc(n,  sizeof(double));
+
     /* Matriz que funciona como vetor de diagonais. Cada linha é uma diagonal. */
     double * sl = calloc(k * n, sizeof(double));
 
@@ -41,6 +45,10 @@ int main() {
 
     /* Resolver por Gauss-Seidel */
     tempoInicio = timestamp();
+    gaussSeidel(sl, termos, res, n, k, epsilon, maxIt);
+
+    /* Imprime a solução do sistema */
+    imprimeVariaveis(res, n);
 
     /* Imprime tempo de execução */
     printf("\nTempo:\n%lf\n", timestamp() - tempoInicio);
