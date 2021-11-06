@@ -53,5 +53,11 @@ int main() {
     /* Imprime tempo de execução */
     printf("\nTempo:\n%lf\n", timestamp() - tempoInicio);
 
+    /* Libera memória alocada */
+    free(sl);
+    free(res);
+    free(termos);
+    free(f);
+
     return 0;
 }
